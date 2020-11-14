@@ -1,0 +1,20 @@
+<!-- Thymeleaf is not HTML5 compliant, so we have to remember to close all the self-closed tags.
+There is a way to configure Thymeleaf to be HTML5 compliant:
+1. Add a properties file at src/main/resources/application.properties
+2. Add the following text at the top:
+   spring.thymeleaf.mode = LEGACYHTML5
+3. In the dependencies block of build.gradle, add Neko HTML as a runtime dependency:
+   runtime 'net.sourceforge.nekohtml:nekohtml:1.9.22'
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>giflib | Home</title>
+</head>
+<body>
+    <h1>Home</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores atque, debitis dolore dolores esse eveniet labore maiores modi nulla placeat porro praesentium provident quia quod rem sed soluta tempore vitae.</p>
+    <img src="http://placehold.it/300/300/5fcf80/ffffff" alt="logo"/>
+</body>
+</html>
