@@ -7,14 +7,15 @@ There is a way to configure Thymeleaf to be HTML5 compliant:
    runtime 'net.sourceforge.nekohtml:nekohtml:1.9.22'
 -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
     <title>giflib | Home</title>
+    <link rel="stylesheet" th:href="@{/app.css}"/>
 </head>
 <body>
     <h1>Home</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores atque, debitis dolore dolores esse eveniet labore maiores modi nulla placeat porro praesentium provident quia quod rem sed soluta tempore vitae.</p>
-    <img src="http://placehold.it/300/300/5fcf80/ffffff" alt="logo"/>
+    <img th:src="@{/gifs/compiler-bot.gif}" alt="logo"/>
 </body>
 </html>
