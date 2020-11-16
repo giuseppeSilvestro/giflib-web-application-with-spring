@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Controller
 public class GifController {
@@ -25,7 +26,9 @@ public class GifController {
 
     //home page. As there is only value, you can omit it
     @RequestMapping(value = "/")
-    public String listGifs() {
+    public String listGifs(ModelMap modelMap) {
+        List<Gif> allGifs = gifRepository.getAllGifs();
+        modelMap.put("gifs", allGifs);
         //as the home.html file is in the right folder (resources/templates),
         // our framework will recognize it and display it
         return "home";

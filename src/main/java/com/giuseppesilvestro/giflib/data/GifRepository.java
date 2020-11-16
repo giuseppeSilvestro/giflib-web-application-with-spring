@@ -35,4 +35,8 @@ public class GifRepository {
                 .findFirst()
                 .orElse(null);
     }
+
+    public List<Gif> getAllGifs() {
+        return ALL_GIFS;
+    }
 }
