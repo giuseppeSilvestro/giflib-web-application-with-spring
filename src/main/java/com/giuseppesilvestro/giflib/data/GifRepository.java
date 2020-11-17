@@ -7,6 +7,7 @@ import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Component
 public class GifRepository {
@@ -38,5 +39,11 @@ public class GifRepository {
 
     public List<Gif> getAllGifs() {
         return ALL_GIFS;
+    }
+
+    public List<Gif> findByCategoryId(int id) {
+        return ALL_GIFS.stream()
+                .filter(e -> e.getCategoryId() == id)
+                .collect(Collectors.toList());
     }
 }
