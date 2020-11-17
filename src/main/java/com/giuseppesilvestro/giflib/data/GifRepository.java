@@ -4,6 +4,7 @@ import com.giuseppesilvestro.giflib.model.Gif;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -45,5 +46,27 @@ public class GifRepository {
         return ALL_GIFS.stream()
                 .filter(e -> e.getCategoryId() == id)
                 .collect(Collectors.toList());
+    }
+
+    public List<Gif> getFavorites() {
+        List<Gif> favorites = new ArrayList<>();
+        for (Gif gif :
+                ALL_GIFS) {
+            if (gif.isFavorite()) {
+                favorites.add(gif);
+            }
+        }
+        return favorites;
+    }
+
+    public List<Gif> searchGifs(String name) {
+        List<Gif> gifs = new ArrayList<>();
+        for (Gif gif :
+                ALL_GIFS) {
+            if (gif.getName().toLowerCase().contains(name)) {
+                gifs.add(gif);
+            }
+        }
+        return gifs;
     }
 }
